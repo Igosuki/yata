@@ -372,3 +372,7 @@ impl OHLCV for [ValueType; 5] {
 // 		(**self).volume()
 // 	}
 // }
+
+pub trait Merge<T> {
+	fn merge(&self, other: &T) -> T;
+}
