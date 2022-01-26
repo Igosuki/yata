@@ -4,10 +4,12 @@
 
 mod history;
 mod methods;
+mod merge;
 
 use crate::core::{Candle, ValueType};
 pub use history::{Buffered, Peekable, WithHistory, WithLastValue};
 pub use methods::{MAInstance, MA};
+pub use merge::Merge;
 
 /// sign is like [`f64::signum`]
 /// except when value == 0.0, then sign returns 0.0

@@ -179,7 +179,7 @@ pub mod prelude {
 		Candle, Error, IndicatorConfig, IndicatorInstance, Method, Sequence, OHLCV,
 	};
 
-	pub use super::helpers::{Buffered, Peekable};
+	pub use super::helpers::{Buffered, Peekable, Merge};
 
 	/// Dynamically dispatchable traits for indicators creation
 	pub mod dd {
