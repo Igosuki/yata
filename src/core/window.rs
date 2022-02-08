@@ -233,6 +233,18 @@ impl<T> Window<T> {
 		}
 	}
 
+	#[inline]
+	#[must_use]
+	pub fn newest_mut(&mut self) -> &mut T {
+		let index = self.index.checked_sub(1).unwrap_or(self.s_1);
+
+		if cfg!(feature = "unsafe_performance") {
+			unsafe { self.buf.get_unchecked_mut(index as usize) }
+		} else {
+			&mut self.buf[index as usize]
+		}
+	}
+
 	/// Returns an oldest value
 	#[inline]
 	#[must_use]
